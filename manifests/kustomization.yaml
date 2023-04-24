@@ -8,4 +8,4 @@ resources:
 secretGenerator:
   - name: secret
     literals:
-      - SECRET=hello my little green friend
+      - secret=hello my little green friend
