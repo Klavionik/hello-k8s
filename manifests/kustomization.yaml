@@ -8,4 +8,4 @@ resources:
 secretGenerator:
   - name: secret
     literals:
-      - secret=hello my little green fiend
+      - secret=master yoda... you survived
