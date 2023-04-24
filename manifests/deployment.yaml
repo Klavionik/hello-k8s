@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: hello-k8s
   name: hello-k8s
 spec:
   replicas: 3

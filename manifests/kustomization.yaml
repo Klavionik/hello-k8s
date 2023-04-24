@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hello-k8s
+resources:
+  - deployment.yaml
+  - ns.yaml
+  - service.yaml
+secretGenerator:
+  - name: secret
+    literals:
+      - SECRET=hello my little green friend
