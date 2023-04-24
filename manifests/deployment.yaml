@@ -16,6 +16,9 @@ spec:
       containers:
         - name: hello-k8s
           image: gitea.klavionik.net/klavionik/hello-k8s:1.2
-          envFrom:
-            - secretRef:
-                name: secrets
+          env:
+            - name: SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: secret
+                  name: secret
