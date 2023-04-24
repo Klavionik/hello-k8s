@@ -6,6 +6,6 @@ resources:
   - ns.yaml
   - service.yaml
 secretGenerator:
-  - name: secret
-    literals:
-      - secret=master yoda... you survived
+  - name: secrets
+    files:
+      - secrets.enc.yaml
