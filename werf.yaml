@@ -1,5 +1,0 @@
-project: hello-k8s
-configVersion: 1
----
-image: hello-k8s
-dockerfile: Dockerfile

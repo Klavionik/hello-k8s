@@ -5,4 +5,5 @@ COPY r.txt .
 RUN pip install -r r.txt
 COPY main.py .
 EXPOSE 7777
+STOPSIGNAL SIGINT
 CMD ["python3", "main.py"]

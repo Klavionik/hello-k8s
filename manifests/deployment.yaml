@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: hello-k8s
+  name: hello-k8s
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      name: hello-k8s
+      labels:
+        app: hello
+    spec:
+      containers:
+        - name: hello-k8s
+          image: localhost:32000/hello-k8s:1.1
+          envFrom:
+            - secretRef:
+                name: secret

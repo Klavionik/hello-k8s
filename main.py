@@ -1,14 +1,22 @@
+import pydantic
 from fastapi import FastAPI
 import socket
 import uvicorn
+import os
 
 app = FastAPI()
 hostname = socket.gethostname()
+secret = os.environ.get("SECRET")
 
 
-@app.get("/hello")
+class Hello(pydantic.BaseModel):
+    msg: str
+    secret: str
+
+
+@app.get("/hello", response_model=Hello)
 async def hello(name: str):
-    return {"msg": f"Hello {name} from {hostname}!\n"}
+    return {"msg": f"Hello {name} from {hostname}!", "secret": secret}
 
 
 if __name__ == '__main__':
