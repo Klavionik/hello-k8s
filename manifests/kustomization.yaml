@@ -8,4 +8,4 @@ resources:
 secretGenerator:
   - name: secrets
     envs:
-      - secrets.enc.yaml
+      - secrets.env
