@@ -7,6 +7,7 @@ import os
 app = FastAPI()
 hostname = socket.gethostname()
 secret = os.environ.get("SECRET")
+another_secret = os.environ.get("SECRET")
 
 
 class Hello(pydantic.BaseModel):
@@ -16,7 +17,7 @@ class Hello(pydantic.BaseModel):
 
 @app.get("/hello", response_model=Hello)
 async def hello(name: str):
-    return {"msg": f"Hello {name} from {hostname}!", "secret": secret}
+    return {"msg": f"Hello {name} from {hostname}!", "secret": secret, "another_secret": another_secret}
 
 
 if __name__ == '__main__':
