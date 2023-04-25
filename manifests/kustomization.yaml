@@ -5,6 +5,9 @@ resources:
   - deployment.yaml
   - ns.yaml
   - service.yaml
+images:
+  - name: gitea.klavionik.net/klavionik/hello-k8s
+    newTag: 1.2
 secretGenerator:
   - name: secrets
     envs:
