@@ -13,6 +13,7 @@ another_secret = os.environ.get("SECRET")
 class Hello(pydantic.BaseModel):
     msg: str
     secret: str
+    another_secret: str
 
 
 @app.get("/hello", response_model=Hello)
