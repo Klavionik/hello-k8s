@@ -7,7 +7,7 @@ resources:
   - service.yaml
 images:
   - name: gitea.klavionik.net/klavionik/hello-k8s
-    newTag: "1.2"
+    newTag: "1.3.0"
 secretGenerator:
   - name: secrets
     envs:
