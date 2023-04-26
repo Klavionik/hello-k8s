@@ -1,0 +1,10 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  seal: sops --age age128krm8g49thdanzs4k85k0rqc9d22x9m4knlp7c94yde5vmus4vqujpl3y --encrypt manifests/secret.env > manifests/secret.enc.env
+
+  unseal: sops --decrypt manifests/secret.enc.env > secret2.env
+
+  build: docker buildx build --push --platform linux/amd64,linux/arm64 --tag gitea.klavionik.net/klavionik/hello-k8s:{{.CLI_ARGS}}
