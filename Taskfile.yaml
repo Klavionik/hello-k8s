@@ -3,7 +3,7 @@
 version: '3'
 
 tasks:
-  seal: sops --age age128krm8g49thdanzs4k85k0rqc9d22x9m4knlp7c94yde5vmus4vqujpl3y --encrypt manifests/secret.env > manifests/secret.enc.env
+  seal: sops --age age1vax23pz8usu7u0wt9lv82dexp9nqa45z7py93m463qyyrq85xa4sarqwr0 --encrypt manifests/secret.env > manifests/secret.enc.env
 
   unseal: sops --decrypt manifests/secret.enc.env > secret2.env
 
