@@ -5,6 +5,7 @@ resources:
   - deployment.yaml
   - ns.yaml
   - service.yaml
+  - ingress.yaml
 images:
   - name: registry.gitlab.com/klavionik/hello-k8s/app
     newTag: "1.0.0" # {"$imagepolicy": "flux-system:hello-k8s:tag"}
