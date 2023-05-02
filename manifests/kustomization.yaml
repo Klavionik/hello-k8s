@@ -6,7 +6,7 @@ resources:
   - ns.yaml
   - service.yaml
 images:
-  - name: gitea.klavionik.net/klavionik/hello-k8s
+  - name: registry.gitlab.com/klavionik/hello-k8s/hello-k8s
     newTag: "1.6.0" # {"$imagepolicy": "flux-system:hello-k8s:tag"}
 secretGenerator:
   - name: secrets
