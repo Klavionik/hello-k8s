@@ -6,9 +6,6 @@ resources:
   - ns.yaml
   - service.yaml
   - ingress.yaml
-images:
-  - name: registry.gitlab.com/klavionik/hello-k8s/app
-    newTag: "1.1.0" # {"$imagepolicy": "hello-k8s:hello-k8s:tag"}
 secretGenerator:
   - name: secrets
     envs:
