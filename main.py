@@ -16,18 +16,9 @@ class Hello(pydantic.BaseModel):
     another_secret: str
 
 
-class Goodbye(pydantic.BaseModel):
-    msg: str
-
-
 @app.get("/hello", response_model=Hello)
 async def hello(name: str):
     return {"msg": f"Hello {name} from {hostname}!", "secret": secret, "another_secret": another_secret}
-
-
-@app.get("/goodbye", response_model=Goodbye)
-async def goodbye(name: str):
-    return {"msg": f"Goodbye, {name}! We'll miss ya."}
 
 
 if __name__ == '__main__':
