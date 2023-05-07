@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: hello-k8s
 resources:
   - deployment.yaml
-  - ns.yaml
   - service.yaml
   - ingress.yaml
 secretGenerator:
