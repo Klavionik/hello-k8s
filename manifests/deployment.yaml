@@ -18,4 +18,3 @@ spec:
           image: registry.gitlab.com/klavionik/hello-k8s/app
           envFrom:
             - secretRef:
-                name: secrets
