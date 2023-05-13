@@ -5,4 +5,4 @@ HASH_FUNCTION=sha256
 REQUEST_BODY=$@
 
 HASH=$(printf "$REQUEST_BODY" | openssl dgst -"$HASH_FUNCTION" -r -hmac $IMGREPO_WEBHOOK_TOKEN | awk '{print $1}')
-curl "$WEBHOOK_URL" -X POST -H "X-Signature: $HASH_FUNCTION=$HASH" -d "$REQUEST_BODY"
+wget -q --header "X-Signature: $HASH_FUNCTION=$HASH" --post-data "$REQUEST_BODY" $WEBHOOK_URL -O - > /dev/null
