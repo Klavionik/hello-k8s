@@ -15,7 +15,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: hello-k8s/app
+          images: ghcr.io/${{ github.repository }}/app
 
       - name: Login to GitHub CR
         uses: docker/login-action@v2
