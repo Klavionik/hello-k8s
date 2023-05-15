@@ -16,9 +16,18 @@ class Hello(pydantic.BaseModel):
     another_secret: str
 
 
+class Cat(pydantic.BaseModel):
+    msg: str
+
+
 @app.get("/hello", response_model=Hello)
 async def hello(name: str):
     return {"msg": f"Hello {name} from {hostname}!", "secret": secret, "another_secret": another_secret}
+
+
+@app.get("/cat", response_model=Cat)
+async def hello(name: str):
+    return {"msg": f"Meow {name} from {hostname}!"}
 
 
 if __name__ == '__main__':
