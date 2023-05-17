@@ -1,5 +1,5 @@
 import pydantic
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 import socket
 import uvicorn
 import os
@@ -18,6 +18,11 @@ class Hello(pydantic.BaseModel):
 
 class Cat(pydantic.BaseModel):
     msg: str
+
+
+@app.get("/healthz")
+async def healthz():
+    return Response(content="OK")
 
 
 @app.get("/hello", response_model=Hello)
